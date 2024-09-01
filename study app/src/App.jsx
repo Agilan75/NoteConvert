@@ -1,27 +1,26 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
+import Header from './Header';
 import Home from './Home';
-import NoteTaking from './NoteTaking';
-import Flashcards from './Flashcards';
-import StudySchedule from './StudySchedule';
-import Settings from './Settings';
+import Login from './Login';
+import Register from './Register';
+import Convert from './Convert';
+import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="container">
-      <Router>
+    <Router>
+      <Header />
+      <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/notes" element={<NoteTaking />} />
-          <Route path="/flashcards" element={<Flashcards />} />
-          <Route path="/schedule" element={<StudySchedule />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/convert" element={<Convert />} />
         </Routes>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
-
