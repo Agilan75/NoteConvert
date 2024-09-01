@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigate = useNavigate();
+
   const handleLogin = (e) => {
     e.preventDefault();
-    // add auth here
-    console.log('Logging in with', username, password);
+    // Add authentication logic here
+    navigate('/convert');
   };
 
   return (
